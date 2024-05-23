@@ -1,11 +1,11 @@
 {{!< default}}
-<div class="gh-page">
+<div>
     <div class="gh-container">
-
-        <div class="gh-postfeed">
+        {{> "podcast-hero"}}
+        <div class="podcast-grid">
         {{#foreach posts}}
 
-            {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+            {{> "podcast-card" page=../pagination.page }} {{!-- partials/card.hbs --}}
 
         {{/foreach}}
         </div>

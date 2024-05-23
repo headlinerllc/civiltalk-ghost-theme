@@ -1,0 +1,8 @@
+routes:
+    /: home
+
+collections:
+    /podcast/:
+        permalink: /podcast/{slug}/
+        template: index
+        filter: primary_tag:podcast
