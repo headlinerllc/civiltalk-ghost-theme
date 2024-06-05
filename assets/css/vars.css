@@ -2,23 +2,23 @@
 /* ---------------------------------------------------------- */
 
 :root {
-
-    /* Colours */
-    --color-primary: var(--ghost-accent-color, #EDB801);
+    /* Colors */
+    --color-primary: var(--ghost-accent-color, #edb801);
     --color-base: #333333;
     --color-border: #ddd;
-    --color-bg: #B0CABD;
-    --color-dark-olive: #9AB5A5;
+    --color-bg: #b0cabd;
+    --color-dark-olive: #9ab5a5;
     --color-success: #80b912;
     --color-error: #f05230;
-    --color-gray: 	#333;
+    --color-gray: #333;
     --color-white: #ffffff;
 
     /* Fonts */
-    --font-sans-serif: 'Sophia Pro', "Helvetica Neue", sans-serif;    
+    --font-sans-serif: "Sophia Pro", "Helvetica Neue", sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-light: 100;
     --font-normal: 400;
+    --font-semi-bold: 600;
     --font-bold: 700;
     --font-heavy: 800;
 
@@ -35,5 +35,5 @@
     --radius: 0.5rem;
 
     /* Box Shadow */
-    --image-box-shadow: 8px 8px 5px rgba(153, 153, 153, 0.5);
+    --image-box-shadow: 10px 7px 5px rgba(150, 150, 150, 0.7);
 }

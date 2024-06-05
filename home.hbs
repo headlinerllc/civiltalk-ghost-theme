@@ -1,28 +1,86 @@
 {{!< default}}
 
-<div class="site-header-content outer {{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
+<header class="site-header-content outer {{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
 
     {{#if @custom.show_publication_cover}}
         {{#if @site.cover_image}}
             {{!-- This is a responsive image, it loads different sizes depending on device
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-            <img class="site-header-cover"
+            <picture>
+            <!-- Serve the AVIF format if the browser supports it -->
+            <!-- Remove this block when using animated images as feature images -->
+            <source 
+                srcset="{{img_url @site.cover_image size="s" format="avif"}} 300w,
+                    {{img_url @site.cover_image size="m" format="avif"}} 600w,
+                    {{img_url @site.cover_image size="l" format="avif"}} 2000w,
+                    {{img_url @site.cover_image size="xl" format="avif"}} 3000w"
+                sizes="(min-width: 1023px) 3000px, 2000px" 
+                type="image/avif"
+            >
+            <!-- Serve the WebP format if the browser supports it -->
+            <source 
+                srcset="{{img_url @site.cover_image size="s" format="webp"}} 300w,
+                    {{img_url @site.cover_image size="m" format="webp"}} 600w,
+                    {{img_url @site.cover_image size="l" format="webp"}} 2000w,
+                    {{img_url @site.cover_image size="xl" format="webp"}} 3000w"
+                sizes="(min-width: 1023px) 3000px, 2000px" 
+                type="image/webp"
+            >
+            <!-- Serve original file format as a fallback -->
+            <img
+                class="site-header-cover"
                 srcset="{{img_url @site.cover_image size="s"}} 300w,
-                        {{img_url @site.cover_image size="m"}} 600w,
-                        {{img_url @site.cover_image size="l"}} 1000w,
-                        {{img_url @site.cover_image size="xl"}} 2000w"
-                sizes="100vw"
+                    {{img_url @site.cover_image size="m"}} 600w,
+                    {{img_url @site.cover_image size="l"}} 2000w,
+                    {{img_url @site.cover_image size="xl"}} 3000w"
+                sizes="(min-width: 1023px) 3000px, 2000px"
                 src="{{img_url @site.cover_image size="xl"}}"
-                alt="{{@site.title}}"
-            />
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            >
+        </picture>
+
         {{/if}}
     {{/if}}
+
+
 
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
             {{#match @custom.navigation_layout "Logo on cover"}}
                 {{#if @site.logo}}
-                    <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+                <picture>
+                <!-- Serve the AVIF format if the browser supports it -->
+                <!-- Remove this block when using animated images as feature images -->
+                    <source 
+                        srcset="{{img_url @site.logo size="s" format="avif"}} 300w,
+                        {{img_url @site.logo size="m" format="avif"}} 600w,
+                        {{img_url @site.logo size="l" format="avif"}} 750w,
+                        {{img_url @site.logo size="xl" format="avif"}} 1500w"
+                        sizes="(min-width: 1023px) 1500px, 750px" 
+                        type="image/avif"
+                    >
+                    <!-- Serve the WebP format if the browser supports it -->
+                    <source 
+                        srcset="{{img_url @site.logo size="s" format="webp"}} 300w,
+                        {{img_url @site.logo size="m" format="webp"}} 600w,
+                        {{img_url @site.logo size="l" format="webp"}} 750w,
+                        {{img_url @site.logo size="xl" format="webp"}} 1500w"
+                        sizes="(min-width: 1023px) 1500px, 750px" 
+                        type="image/webp"
+                    >
+                    <!-- Serve original file format as a fallback -->
+                    <img
+                        class="site-logo"
+                        srcset="{{img_url @site.logo size="s"}} 300w,
+                        {{img_url @site.logo size="m"}} 600w,
+                        {{img_url @site.logo size="l"}} 1000w,
+                        {{img_url @site.logo size="xl"}} 2000w"
+                        sizes="(min-width: 1023px) 1500px, 750px" 
+                        src="{{img_url @site.logo size="xl"}}"
+                        alt="{{@site.title}}"
+                    >
+                </picture>
+
                 {{else}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
@@ -40,22 +98,14 @@
             </div>
         </div>
     {{/match}}
+    </header>
 
-</div>
-
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-
-
-
-
-
-    <div class="homepage-sections-container">
+    <section class="homepage-sections-container">
         {{#foreach posts}}
             {{> "section" page=../pagination.page }} {{!-- partials/card.hbs --}}
         {{/foreach}}
-    </div>
+    </section>
 
-</main>
+
 
 
