@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{#page}}
+    <article class="{{post_class}}">
+        <header class="why-civiltalk-hero">
+            <div class="why-civiltalk-hero-content">
+                <h1 class="why-civiltalk-hero-title">{{title}}</h1>
+                <h2 class="why-civiltalk-hero-subtitle">
+                    {{custom_excerpt}}
+                </div>
+            </div>
+        </header>
+        <section class="{{post_class}} features-container">
+            {{#get "posts" filter="primary_tag:features"}}
+                {{#foreach posts}}
+                    {{> "feature" page=../pagination.page }} {{!-- partials/card.hbs --}}
+                {{/foreach}}
+            {{/get}}
+        </section>
+    </article>
+{{/page}}
+
+
+
+
+

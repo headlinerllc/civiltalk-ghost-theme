@@ -1,0 +1,16 @@
+routes:
+    /:
+        controller: channel
+        template: home
+        filter: tag:sections
+
+    /why-civiltalk/:
+        controller: channel
+        template: page-why-civiltalk
+        filter: tag:features
+
+collections:
+    /podcast/:
+        permalink: /podcast/{slug}/
+        template: index
+        filter: primary_tag:podcast

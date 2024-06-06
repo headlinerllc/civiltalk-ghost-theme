@@ -1,0 +1,70 @@
+{{!--
+Re-usable card for linking to posts
+--}}
+
+<article class="podcast-card">
+    <a class="podcast-card-link" href="{{url}}">
+        {{#if feature_image}}
+            <picture class="podcast-card-picture">
+              <source 
+                srcset="
+                {{img_url feature_image size="xxs" format="avif"}} 30w,
+                {{img_url feature_image size="xs" format="avif"}} 100w,
+                {{img_url feature_image size="s" format="avif"}} 300w,
+                {{img_url feature_image size="m" format="avif"}} 600w,
+                {{img_url feature_image size="l" format="avif"}} 1200w,
+                {{img_url feature_image size="xl" format="avif"}} 2000w"
+                {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
+                type="image/avif"
+                {{^if @first}}loading="lazy"{{/if}}
+              >
+              <source 
+                srcset="
+                {{img_url feature_image size="xxs" format="webp"}} 30w,
+                {{img_url feature_image size="xs" format="webp"}} 100w,
+                {{img_url feature_image size="s" format="webp"}} 300w,
+                {{img_url feature_image size="m" format="webp"}} 600w,
+                {{img_url feature_image size="l" format="webp"}} 1200w,
+                {{img_url feature_image size="xl" format="webp"}} 2000w"
+                {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
+                type="image/webp"
+                {{^if @first}}loading="lazy"{{/if}}
+
+              >
+              <img
+                srcset="
+                {{img_url feature_image size="xxs"}} 30w,
+                {{img_url feature_image size="xs"}} 100w,
+                {{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1200w,
+                {{img_url feature_image size="xl"}} 2000w"
+                {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
+                src="{{img_url feature_image size="m"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                class="podcast-card-image"
+                {{^if @first}}loading="lazy"{{/if}}
+              >
+            </picture>
+        {{/if}}
+        <div class="podcast-card-content-container">
+          <div class="podcast-meta-container">
+            <div class="podcast-meta">
+              <h1 class="podcast-card-content-episode-number">E1</h1>
+              <time class='podcast-card-content-time' datetime='{{ date format='YYYY-MM-DD' }}' title='{{ date format='DD MMMM YYYY' }}'>{{ date format='DD.MMM.YYYY' }}</time>
+            </div>
+            <h2 class="podcast-card-content-title">{{title}}</h2>
+          </div>
+        </div>
+        {{!-- <div class="podcast-card-button-container">
+          <button class="podcast-card-button">
+            <div class="podcast-card-button-meta-container">
+              <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#333"><path d="M240-80v-172q-57-52-88.5-121.5T120-520q0-150 105-255t255-105q125 0 221.5 73.5T827-615l52 205q5 19-7 34.5T840-360h-80v120q0 33-23.5 56.5T680-160h-80v80h-80v-160h160v-200h108l-38-155q-23-91-98-148t-172-57q-116 0-198 81t-82 197q0 60 24.5 114t69.5 96l26 24v208h-80Zm254-360Zm-54 80h80l6-50q8-3 14.5-7t11.5-9l46 20 40-68-40-30q2-8 2-16t-2-16l40-30-40-68-46 20q-5-5-11.5-9t-14.5-7l-6-50h-80l-6 50q-8 3-14.5 7t-11.5 9l-46-20-40 68 40 30q-2 8-2 16t2 16l-40 30 40 68 46-20q5 5 11.5 9t14.5 7l6 50Zm40-100q-25 0-42.5-17.5T420-520q0-25 17.5-42.5T480-580q25 0 42.5 17.5T540-520q0 25-17.5 42.5T480-460Z"/></svg>
+            </div>
+            <span>
+              Learn More
+            </span>
+            </button>
+        </div> --}}
+    </a>
+</article>
