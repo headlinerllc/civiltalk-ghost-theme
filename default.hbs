@@ -10,7 +10,6 @@
 
         <title>{{meta_title}}</title>
 
-        {{log "****** title:" this}}
         {{ghost_head}}
         {{! Outputs important meta data and settings, should always be in <head> }}
 
@@ -60,7 +59,14 @@
                     </div>
                     <!-- Grid Item 4 -->
                     <div class="ct-login-button-container">
-                        <button class="homepage-cta-button">Sign up / Log in</button>
+                        <a
+                            href="https://app.civiltalk.com"
+                            rel="noreferrer"
+                            referrerpolicy="no-referrer"
+                            target="_blank"
+                        >
+                            <button class="homepage-cta-button">Sign up / Log in</button>
+                        </a>
                     </div>
                 </nav>
             </header>
@@ -75,10 +81,93 @@
             <footer class="gh-foot">
                 <div class="gh-container">
                     <div class="gh-foot-menu">
-                        {{navigation type="secondary"}}
-                        FOOTER
-                    </div>
+                        <h2>CivilTalk</h2>
+                        <nav class="nav">
+                            <li>
+                                <a
+                                    href="https://res.cloudinary.com/headliner/image/upload/v1706298273/terms_of_service/Civil_Talk_Terms_of_Use.pdf"
+                                    rel="noreferrer"
+                                    referrerpolicy="no-referrer"
+                                    target="_blank"
+                                >
+                                    <h6>Terms of Use</h6>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://res.cloudinary.com/headliner/image/upload/v1706300974/terms_of_service/Copyright_DMCA_Policy.pdf"
+                                    rel="noreferrer"
+                                    referrerpolicy="no-referrer"
+                                    target="_blank"
+                                >
+                                    <h6>Copyright Policy</h6>
+                                </a>
+                            </li>
+                        </nav>
 
+                        <ul class="footer-socials-list">
+                            <li>
+                                <a
+                                    href="https://twitter.com/CivilTalkapp"
+                                    rel="noreferrer"
+                                    referrerpolicy="no-referrer"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="{{asset
+                                            'assets/icons/twitter_green_512.png'
+                                        }}"
+                                        alt="Visit our X page"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/civiltalkapp"
+                                    rel="noreferrer"
+                                    referrerpolicy="no-referrer"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="{{asset
+                                            'assets/icons/instagram_green_512.png'
+                                        }}"
+                                        alt="Visit our Instagram"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/company/civiltalk"
+                                    rel="noreferrer"
+                                    referrerpolicy="no-referrer"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="{{asset
+                                            'assets/icons/linkedin_green_512.png'
+                                        }}"
+                                        alt="Visit our Linkedin Page"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.facebook.com/civiltalkapp"
+                                    rel="noreferrer"
+                                    referrerpolicy="no-referrer"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="{{asset
+                                            'assets/icons/facebook_green_512.png'
+                                        }}"
+                                        alt="Visit our Facebook Page"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </footer>
 

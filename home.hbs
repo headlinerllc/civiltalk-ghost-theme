@@ -1,5 +1,11 @@
 {{!< default}}
 
+{{#contentFor "meta_title"}}
+    <titile>
+        CivilTalk: Home
+    </title>
+{{/contentFor}}
+
 <header class="site-header-content outer {{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
 
     {{#if @custom.show_publication_cover}}

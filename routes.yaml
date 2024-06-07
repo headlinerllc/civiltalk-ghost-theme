@@ -9,3 +9,4 @@ collections:
         permalink: /podcast/{slug}/
         template: custom-podcasts
         filter: primary_tag:podcast
+        data: page.podcast
