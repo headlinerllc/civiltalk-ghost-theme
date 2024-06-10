@@ -617,6 +617,15 @@ html,
     flex-wrap: wrap;
 }
 
+.podcast-page-hero-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
 .podcast-hero-link-container {
     /* background: var(--color-gray); */
 }
