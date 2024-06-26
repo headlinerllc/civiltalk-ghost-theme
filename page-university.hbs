@@ -1,0 +1,107 @@
+{{!< default}}
+
+{{#page}}
+<header class="site-header-content outer">
+
+  {{#if feature_image}}
+
+      <picture class="university-header-cover">
+        <!-- Serve the AVIF format if the browser supports it -->
+        <source 
+          srcset="{{img_url feature_image size="s" format="avif"}} 300w,
+              {{img_url feature_image size="m" format="avif"}} 600w,
+              {{img_url feature_image size="l" format="avif"}} 2000w,
+              {{img_url feature_image size="xl" format="avif"}} 3000w"
+          sizes="(min-width: 1023px) 3000px, 2000px" 
+          type="image/avif"
+        >
+        <!-- Serve the WebP format if the browser supports it -->
+        <source 
+          srcset="{{img_url feature_image size="s" format="webp"}} 300w,
+              {{img_url feature_image size="m" format="webp"}} 600w,
+              {{img_url feature_image size="l" format="webp"}} 2000w,
+              {{img_url feature_image size="xl" format="webp"}} 3000w"
+          sizes="(min-width: 1023px) 3000px, 2000px" 
+          type="image/webp"
+        >
+        <!-- Serve original file format as a fallback -->
+        <img
+          class="university-header-cover overlay"
+          srcset="{{img_url feature_image size="s"}} 300w,
+              {{img_url feature_image size="m"}} 600w,
+              {{img_url feature_image size="l"}} 2000w,
+              {{img_url feature_image size="xl"}} 3000w"
+          sizes="(min-width: 1023px) 3000px, 2000px"
+          src="{{img_url feature_image size="xl"}}"
+          alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        >
+      </picture>
+      <div class="university-image-container"></div>
+
+  {{/if}}
+
+  {{#match @custom.header_style "!=" "Hidden"}}
+      <div class="site-header-inner inner">
+          {{#match @custom.navigation_layout "Logo on cover"}}
+              {{#if @site.logo}}
+              <picture>
+              <!-- Serve the AVIF format if the browser supports it -->
+              <!-- Remove this block when using animated images as feature images -->
+                  <source 
+                      srcset="{{img_url @site.logo size="s" format="avif"}} 300w,
+                      {{img_url @site.logo size="m" format="avif"}} 600w,
+                      {{img_url @site.logo size="l" format="avif"}} 750w,
+                      {{img_url @site.logo size="xl" format="avif"}} 1500w"
+                      sizes="(min-width: 1023px) 1500px, 750px" 
+                      type="image/avif"
+                  >
+                  <!-- Serve the WebP format if the browser supports it -->
+                  <source 
+                      srcset="{{img_url @site.logo size="s" format="webp"}} 300w,
+                      {{img_url @site.logo size="m" format="webp"}} 600w,
+                      {{img_url @site.logo size="l" format="webp"}} 750w,
+                      {{img_url @site.logo size="xl" format="webp"}} 1500w"
+                      sizes="(min-width: 1023px) 1500px, 750px" 
+                      type="image/webp"
+                  >
+                  <!-- Serve original file format as a fallback -->
+                  <img
+                      class="site-logo"
+                      srcset="{{img_url @site.logo size="s"}} 300w,
+                      {{img_url @site.logo size="m"}} 600w,
+                      {{img_url @site.logo size="l"}} 1000w,
+                      {{img_url @site.logo size="xl"}} 2000w"
+                      sizes="(min-width: 1023px) 1500px, 750px" 
+                      src="{{img_url @site.logo size="xl"}}"
+                      alt="{{@site.title}}"
+                  >
+              </picture>
+              {{else}}
+                  <h1 class="site-title">{{@site.title}}</h1>
+              {{/if}}
+          {{/match}}
+          <div class="homepage-cta-container">
+              {{#if @custom.cta_header}}
+                  <h1 class="university-cta-header">{{title}}</h1>
+              {{/if}}
+              {{#if @custom.cta_sub_header}}
+                  <h2 class="university-cta-sub-header">{{custom_excerpt}}</h2>
+              {{/if}}
+          </div>
+      </div>
+  {{/match}}
+    </header>
+          <section class="{{post_class}} features-container">
+
+            {{#get "posts" filter="primary_tag:university"}}
+                {{#foreach posts}}
+                    {{> "feature" page=../pagination.page }} {{!-- partials/card.hbs --}}
+                {{/foreach}}
+            {{/get}}
+
+        </section>
+
+{{/page}}
+
+
+
