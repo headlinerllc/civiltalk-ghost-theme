@@ -295,9 +295,6 @@ html,
     text-align: center;
 }
 
-/* .homepage-cta-button-container {
-} */
-
 .homepage-cta-button {
     border: none;
     background: var(--ghost-accent-color);
@@ -306,7 +303,7 @@ html,
     font-size: clamp(1rem, 1vw + 1rem, 2rem);
     line-height: 1.3em;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
 }
 
 @media (max-width: 1023px) {
@@ -647,6 +644,112 @@ html,
     .why-civiltalk-hero-content {
         padding: 0 1em;
     }
+}
+
+/* ********************************************** */
+/* Pricing Page */
+/* ********************************************** */
+.pricing-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 0 2em;
+    min-height: 78vh;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 20%;
+    /* gap: 0.5rem; */
+    max-width: 100rem;
+    margin: 0 1rem 2rem 1rem;
+    margin-bottom: 2rem;
+    /* outline: 10px solid var(--color-darkgrey); */
+}
+.grid-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    outline: 2px solid;
+    /* border: 1px solid var(--color-darkgrey); */
+}
+
+.feature-copy {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+@media (max-width: 599px) {
+    .grid-container {
+        margin: 0.25rem;
+        gap: 0.25rem;
+    }
+
+    .feature-copy {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+.column-1 {
+    background-color: #eaeaea;
+    background-color: var(--color-bg);
+    color: var(--color-darkgrey);
+}
+
+.header {
+    grid-column: 1 / 3;
+    text-align: center;
+    background-color: var(--color-dark-olive);
+    display: flex;
+    justify-content: center;
+}
+
+.header h3 {
+    font-size: 2rem;
+    font-size: clamp(1.5rem, 2vw + 1rem, 3.5rem);
+    font-weight: 500;
+    text-align: center;
+    line-height: normal;
+}
+
+.header h5 {
+    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.75rem);
+    font-weight: 500;
+    text-align: center;
+    line-height: normal;
+}
+
+.subheader {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+}
+
+.subheader h4 {
+    color: var(--color-white);
+    font-size: 1.15rem;
+    font-size: clamp(1.15rem, 2vw + 1rem, 2rem);
+    font-weight: 500;
+    text-align: center;
+    line-height: normal;
+}
+
+.column-2 {
+    background-color: var(--color-dark-olive);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column-2 img {
 }
 
 /* ********************************************** */
