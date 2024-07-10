@@ -69,55 +69,33 @@ html,
     /* height: 60vh; */
     /* height: 60vw;; */
     /* padding: 23rem 0; */
+    width: 100%;
+    height: 78vh;
+    overflow: hidden;
 }
 
 .site-header-content > picture {
+    object-fit: cover;
+    object-position: top;
+    display: block;
     width: 100%;
+    height: 100%;
+    object-position: 0rem;
+}
+
+.site-header-content > picture > img {
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-position: 0rem;
 }
 
 @media (max-width: 899px) {
-    .site-header-content > picture {
-        width: 120%;
+    .site-header-content > picture > img {
+        height: 110%;
     }
-}
-
-@media (max-width: 699px) {
-    .site-header-content > picture {
-        width: 150%;
-    }
-}
-
-@media (max-width: 599px) {
-    .site-header-content > picture {
-        width: 190%;
-    }
-}
-
-@media (max-width: 499px) {
-    .site-header-content > picture {
-        width: 250%;
-    }
-}
-
-@media (max-width: 399px) {
-    .site-header-content > picture {
-        width: 300%;
-    }
-}
-
-.site-header-cover {
-    /* z-index: 100; */
-    /* max-width: 90rem; */
-    text-align: center;
-    /* position: absolute; */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* height: 100%; */
-    /* min-height: 90vh; */
-    object-fit: cover;
 }
 
 .overlay {
@@ -304,6 +282,15 @@ html,
     line-height: 1.3em;
     font-weight: 600;
     padding: 1rem 2rem;
+}
+
+@media (max-width: 1300px) {
+    .homepage-cta-button {
+        font-size: clamp(1rem, 1vw + 0.75rem, 2rem);
+        line-height: 1.3em;
+        font-weight: 600;
+        padding: 1rem 1.15rem;
+    }
 }
 
 @media (max-width: 1023px) {
@@ -674,10 +661,12 @@ html,
 }
 .grid-item {
     display: flex;
+    justify-content: center;
     align-items: flex-start;
     padding: 1rem;
     outline: 2px solid;
     /* border: 1px solid var(--color-darkgrey); */
+    text-align: center;
 }
 
 .feature-copy {
@@ -698,9 +687,12 @@ html,
 }
 
 .column-1 {
+    text-align: center;
     background-color: #eaeaea;
     background-color: var(--color-bg);
     color: var(--color-darkgrey);
+    display: flex;
+    justify-content: center;
 }
 
 .header {
