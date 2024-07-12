@@ -1,3 +1,35 @@
+/* fonts
+/* ---------------------------------------------------------- */
+@font-face {
+    font-family: "sophia pro";
+    font-weight: 400;
+    font-display: auto;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("../fonts/sophia-pro-regular-400.woff2") format("woff2"),
+        url("../fonts/sophia-pro-regular-400.woff") format("woff");
+}
+
+@font-face {
+    font-family: "sophia pro";
+    font-weight: 400;
+    font-display: auto;
+    font-style: italic;
+    font-stretch: normal;
+    src: url("../fonts/sophia-pro-italic-400.woff2") format("woff2"),
+        url("../fonts/sophia-pro-italic-400.woff") format("woff");
+}
+
+@font-face {
+    font-family: "sophia pro";
+    font-weight: 700;
+    font-display: auto;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("../fonts/sophia-pro-normal-700.woff2") format("woff2"),
+        url("../fonts/sophia-pro-normal-700.woff") format("woff");
+}
+
 /* Variables
 /* ---------------------------------------------------------- */
 
@@ -14,7 +46,8 @@
     --color-white: #ffffff;
 
     /* Fonts */
-    --font-sans-serif: "Sophia Pro", "Helvetica Neue", sans-serif;
+    /* --font-sans-serif: "sophia pro", Helvetica Neue, sans-serif; */
+    --font-sans-serif: "sophia pro", sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-light: 100;
     --font-normal: 400;

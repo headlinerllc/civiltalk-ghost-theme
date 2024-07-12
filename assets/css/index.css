@@ -61,14 +61,8 @@ html,
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding-top: calc(40vmin + 44px);
-    padding-bottom: 40vmin; */
     text-align: center;
     color: var(--color-darkgrey);
-    /* margin-bottom: 2rem;; */
-    /* height: 60vh; */
-    /* height: 60vw;; */
-    /* padding: 23rem 0; */
     width: 100%;
     height: 78vh;
     overflow: hidden;
@@ -93,8 +87,22 @@ html,
 }
 
 @media (max-width: 899px) {
+    .site-header-content > picture {
+        height: 110%;
+    }
     .site-header-content > picture > img {
         height: 110%;
+    }
+}
+
+@media (max-width: 699px) {
+    .site-header-content > picture {
+        height: 200%;
+        object-position: bottom;
+    }
+    .site-header-content > picture > img {
+        height: 200%;
+        object-position: bottom;
     }
 }
 
@@ -502,19 +510,53 @@ html,
 
 /** University Page Styles */
 
-.university-header-cover {
-    /* z-index: 100; */
-    /* max-width: 90rem; */
+.university-header-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    /* position: absolute; */
+    color: var(--color-darkgrey);
+    width: 100%;
+    height: 78vh;
+    overflow: hidden;
+}
+
+.university-header-content > picture {
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    /* text-align: center; */
+    /* top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    height: 100%;
+    width: 100%;
+    /* object-position: center; */
+}
+
+.university-header-cover > picture {
+    text-align: center;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     width: 100%;
-    /* height: 100%; */
-    /* min-height: 90vh; */
     object-fit: cover;
+    object-position: center;
+}
+
+.university-header-cover > picture > img {
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .university-image-container {
@@ -607,14 +649,36 @@ html,
     font-size: clamp(3rem, 4vw + 1rem, 5rem);
     color: var(--color-white);
     text-align: center;
+    font-family: "sophia pro";
 }
 
 .why-civiltalk-hero-subtitle {
     font-size: 1.75rem;
-    font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+    font-size: clamp(2rem, 2vw + 1rem, 3rem);
     font-weight: 500;
     text-align: center;
     line-height: normal;
+    padding-bottom: 1.5rem;
+    font-family: "sophia pro";
+}
+
+.why-civiltalk-hero-subtitle-disclaimer {
+    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+    font-weight: 500;
+    text-align: center;
+    line-height: normal;
+    padding-bottom: 1rem;
+}
+
+.why-civiltalk-hero-subtitle-disclaimer:first-of-type {
+    font-size: 1.25rem;
+    font-size: clamp(0.85rem, 2vw + 1rem, 1.85rem);
+    font-weight: 500;
+    text-align: center;
+    line-height: normal;
+    padding-bottom: 1rem;
+    color: var(--color-white);
 }
 
 .why-civiltalk-features-header {
@@ -930,12 +994,13 @@ html,
 .podcast-card {
     /* display: flex; */
     position: relative;
+    border-radius: 0.25rem;
 }
 
 .podcast-card:nth-child(1) {
     grid-column: span 2;
     background: var(--color-dark-olive);
-    box-shadow: var(--image-box-shadow);
+    /* box-shadow: var(--image-box-shadow); */
 }
 
 .podcast-card:nth-child(1) > a > picture {
@@ -951,12 +1016,15 @@ html,
 
 .podcast-card-picture {
     display: flex;
+    border-radius: 0.25rem;
 }
 
 .podcast-card-image {
     aspect-ratio: 1 / 1;
     /* aspect-ratio: 16 / 9; */
     object-fit: cover;
+    border-radius: 0.25rem;
+    /* object-fit: contain; */
 }
 
 /* .podcast-card-image:nth-child(1) {
@@ -978,6 +1046,7 @@ html,
         rgba(84, 84, 84, 0) 50%
     );
     padding: 1rem;
+    border-radius: 0.25rem;
 }
 
 .podcast-meta-container {
