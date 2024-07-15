@@ -1028,6 +1028,11 @@ html,
 .podcast-card-picture {
     display: flex;
     border-radius: 0.25rem;
+    object-fit: cover;
+}
+
+.podcast-card picture {
+    object-fit: cover;
 }
 
 .podcast-card-image {
