@@ -28,7 +28,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Custom Components */
 
-/* Main - Your styles here! Edit below
+/* Main 
 /* ---------------------------------------------------------- */
 html,
 .gh-viewport {
@@ -83,7 +83,7 @@ html,
     display: block;
     width: 100%;
     height: 100%;
-    object-position: 0rem;
+    /* object-position: 0rem; */
 }
 
 @media (max-width: 899px) {
@@ -103,6 +103,13 @@ html,
     .site-header-content > picture > img {
         height: 200%;
         object-position: bottom;
+    }
+}
+
+@media only screen and (max-height: 480px) and (min-width: 480px) and (orientation: landscape) {
+    /* For mobile devices in landscape mode */
+    .site-header-content {
+        height: 135vh;
     }
 }
 
@@ -513,6 +520,62 @@ html,
 
 /** University Page Styles */
 
+/* .site-header-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-darkgrey);
+    width: 100%;
+    height: 78vh;
+    overflow: hidden;
+} */
+
+.site-header-content > picture {
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-position: 0rem;
+}
+
+.site-header-content > picture > img {
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 899px) {
+    .site-header-content > picture {
+        height: 110%;
+    }
+    .site-header-content > picture > img {
+        height: 110%;
+    }
+}
+
+@media (max-width: 699px) {
+    .site-header-content > picture {
+        height: 200%;
+        object-position: bottom;
+    }
+    .site-header-content > picture > img {
+        height: 200%;
+        object-position: bottom;
+    }
+}
+
+@media only screen and (max-height: 480px) and (min-width: 480px) and (orientation: landscape) {
+    .site-header-content {
+        height: 135vh;
+    }
+}
+
 .university-header-content {
     position: relative;
     display: flex;
@@ -699,10 +762,13 @@ html,
     text-align: center;
 }
 
-@media (max-width: 499px) {
-    /* .why-civiltalk-hero-content {
-        padding: 0 1em;
-    } */
+@media only screen and (max-height: 480px) and (min-width: 480px) and (orientation: landscape) {
+    /* mobile devices in landscape mode */
+    .why-civiltalk-hero-content {
+        gap: 2rem;
+        padding: 0 2em;
+        min-height: 120vh;
+    }
 }
 
 /* ********************************************** */
@@ -719,6 +785,13 @@ html,
     padding: 0 2em;
     min-height: 78vh;
     text-align: center;
+}
+
+@media only screen and (max-height: 480px) and (min-width: 480px) and (orientation: landscape) {
+    /* For mobile devices in landscape mode */
+    .pricing-hero-content {
+        height: 135vh;
+    }
 }
 
 .grid-container {
