@@ -68,11 +68,22 @@
     display: inline-block;
     padding: 5px 0;
     font-weight: var(--font-sans-serif);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .gh-head-menu .nav-current a {
     box-shadow: 0 -1px 0 0 currentcolor inset;
+}
+
+.nav-cta-button {
+    border: none;
+    background: var(--ghost-accent-color);
+    border-radius: 0.25rem;
+    color: var(--color-base);
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
 }
 
 /* Secondary Navigation

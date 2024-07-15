@@ -385,12 +385,15 @@ html,
         flex-direction: column;
     }
 
+    .article-grid-item-2 {
+        padding: 2rem 1rem;
+    }
+
     .article-section-excerpt {
         font-size: 1.35rem;
         font-weight: 500;
         line-height: normal;
         text-align: center;
-        /* width: 80%; */
         padding: 0 1.5rem;
     }
 }
@@ -582,7 +585,7 @@ html,
 
 .university-cta-header {
     font-size: 3rem;
-    font-size: clamp(1.25rem, 1.5vw + 1rem, 3rem);
+    font-size: clamp(1.5rem, 1.5vw + 1.5rem, 4rem);
     font-weight: 700;
     text-transform: uppercase;
     line-height: normal;
@@ -593,13 +596,19 @@ html,
 
 .university-cta-sub-header {
     font-size: 1.65rem;
-    font-size: clamp(1rem, 1.05vw + 1rem, 2rem);
+    font-size: clamp(1.25rem, 1.25vw + 1rem, 2rem);
     font-weight: 500;
     max-width: 60%;
     line-height: normal;
     width: 65vw;
     text-align: center;
     color: var(--color-white);
+}
+
+@media (max-width: 699px) {
+    .university-cta-header {
+        padding: 1.25rem 0.75rem;
+    }
 }
 
 /* Casper Home Page Styles
@@ -653,8 +662,8 @@ html,
 }
 
 .why-civiltalk-hero-subtitle {
-    font-size: 1.75rem;
-    font-size: clamp(2rem, 2vw + 1rem, 3rem);
+    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.5vw + 1rem, 2.5rem);
     font-weight: 500;
     text-align: center;
     line-height: normal;
@@ -664,21 +673,20 @@ html,
 
 .why-civiltalk-hero-subtitle-disclaimer {
     font-size: 1.5rem;
-    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+    font-size: clamp(1rem, 1.25vw + 1rem, 2rem);
     font-weight: 500;
     text-align: center;
     line-height: normal;
-    padding-bottom: 1rem;
 }
 
 .why-civiltalk-hero-subtitle-disclaimer:first-of-type {
     font-size: 1.25rem;
-    font-size: clamp(0.85rem, 2vw + 1rem, 1.85rem);
+    font-size: clamp(0.85rem, 1.25vw + 1rem, 1.85rem);
     font-weight: 500;
     text-align: center;
     line-height: normal;
-    padding-bottom: 1rem;
     color: var(--color-white);
+    padding-bottom: 0.5rem;
 }
 
 .why-civiltalk-features-header {
@@ -692,9 +700,9 @@ html,
 }
 
 @media (max-width: 499px) {
-    .why-civiltalk-hero-content {
+    /* .why-civiltalk-hero-content {
         padding: 0 1em;
-    }
+    } */
 }
 
 /* ********************************************** */
@@ -890,6 +898,7 @@ html,
     box-shadow: var(--image-box-shadow);
     background-color: var(--color-bg);
     min-width: 9rem;
+    justify-content: center;
 }
 
 .podcast-hero-link-container a:hover {
@@ -971,6 +980,7 @@ html,
     .podcast-hero-link-container a {
         font-size: 1rem;
         padding: 0.25rem 1rem;
+        min-width: none;
     }
 
     .podcast-link-content {
@@ -1012,6 +1022,7 @@ html,
 
 .podcast-card-link {
     /* position: relative; */
+    display: block;
 }
 
 .podcast-card-picture {
@@ -1024,12 +1035,11 @@ html,
     /* aspect-ratio: 16 / 9; */
     object-fit: cover;
     border-radius: 0.25rem;
-    /* object-fit: contain; */
 }
 
-/* .podcast-card-image:nth-child(1) {
-    width: 50%;
-} */
+.podcast-card-image:nth-child(1) {
+    object-fit: contain;
+}
 
 .podcast-card-content-container {
     position: absolute;
