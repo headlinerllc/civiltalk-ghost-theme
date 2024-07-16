@@ -497,7 +497,7 @@ html,
 
 .feature-section-excerpt-list-container {
     text-align: center;
-    padding: 1.5rem 1.5rem 0;
+    padding: 1.5rem 1.5rem 0 !important;
     margin-left: 1rem;
     list-style-type: disc !important;
 }
@@ -509,8 +509,7 @@ html,
     line-height: normal;
     text-align: center;
     color: var(--color-base);
-    margin-bottom: 0.85rem;
-    /* padding: 1rem 0; */
+    margin-bottom: 0.5rem;
 }
 
 /** Section Card Mobile Screen View */
