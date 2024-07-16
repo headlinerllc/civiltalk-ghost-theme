@@ -495,6 +495,24 @@ html,
     padding: 1rem 0 2rem 0;
 }
 
+.feature-section-excerpt-list-container {
+    text-align: center;
+    padding: 1.5rem 1.5rem 0;
+    margin-left: 1rem;
+    list-style-type: disc !important;
+}
+
+.feature-section-excerpt-list-element {
+    font-size: 1.5rem;
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    color: var(--color-base);
+    margin-bottom: 0.85rem;
+    /* padding: 1rem 0; */
+}
+
 /** Section Card Mobile Screen View */
 
 @media (max-width: 699px) {
