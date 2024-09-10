@@ -1,29 +1,30 @@
 // Toggle the menu open and close when on mobile
 export default function splitPricingSubHeader() {
     const pricingSubHeaderContainer = document.querySelector(
-        ".why-civiltalk-hero-subtitle-container"
+        '.why-civiltalk-hero-subtitle-container'
     );
 
-    const strings = pricingSubHeaderContainer.innerHTML.split(".");
+    const strings = pricingSubHeaderContainer.innerHTML.split('.');
 
-    pricingSubHeaderContainer.innerHTML = "";
+    pricingSubHeaderContainer.innerHTML = '';
 
-    for (let i = 0; i < strings.length; i++) {
-        let newLine;
+    const h2 = document.createElement('h2');
+    h2.setAttribute('class', 'why-civiltalk-hero-subtitle');
+    h2.innerHTML = strings[0];
 
-        if (i === 0) {
-            newLine = document.createElement("h2");
-            newLine.setAttribute("class", "why-civiltalk-hero-subtitle");
-        } else {
-            newLine = document.createElement("h3");
-            newLine.setAttribute(
-                "class",
-                "why-civiltalk-hero-subtitle-disclaimer"
-            );
-        }
+    pricingSubHeaderContainer.appendChild(h2);
 
-        newLine.innerHTML = strings[i];
+    const ul = document.createElement('ul');
 
-        pricingSubHeaderContainer.appendChild(newLine);
+    for (let i = 1; i < strings.length; i++) {
+        let li = document.createElement('li');
+
+        li.setAttribute('class', 'why-civiltalk-hero-subtitle-disclaimer');
+
+        li.innerHTML = strings[i];
+
+        ul.appendChild(li);
     }
+
+    pricingSubHeaderContainer.appendChild(ul);
 }

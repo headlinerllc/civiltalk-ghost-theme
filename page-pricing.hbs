@@ -1,116 +1,133 @@
 {{!< default}}
 
 {{#page}}
-    <article class="{{post_class}}>
-        <header class="why-civiltalk-hero">
-            <div class="pricing-hero-content">
-                <h1 class="why-civiltalk-hero-title">{{title}}</h1>
-                <div class="why-civiltalk-hero-subtitle-container">
+    <article class='{{post_class}}' role='article'>
+        <header class='why-civiltalk-hero' role='banner'>
+            <div class='pricing-hero-content'>
+                <h1 class='why-civiltalk-hero-title'>
+                    {{title}}
+                </h1>
+                <div class='why-civiltalk-hero-subtitle-container'>
                     {{custom_excerpt}}
                 </div>
-                  <a
-                    href="mailto:support@civiltalk.com"
-                    rel="noreferrer"
-                    referrerpolicy="no-referrer"
-                    target="_blank"
-                  >
-                    <button class="homepage-cta-button">Contact Us</button>
-                  </a>
-                </div>
+                <a
+                    href='mailto:support@civiltalk.com'
+                    rel='noreferrer'
+                    referrerpolicy='no-referrer'
+                    target='_blank'
+                >
+                    <button class='homepage-cta-button'>
+                        Contact Us
+                    </button>
+                </a>
             </div>
         </header>
-        <section class="{{post_class}} features-container">
-    <div class="grid-container">
-        <div class="grid-item column-1 header">
-          <h3>University Membership</h3>
-          </div>
-        <div class="grid-item column-1 subheader">
-          <h4>With CivilTalk You Can...</h4>
-        </div>
+        <section
+            class='{{post_class}} features-container'
+            role='region'
+            aria-labelledby='features-heading'
+        >
+            <div class='grid-container'>
+                <div class='grid-item column-1 header'>
+                    <h2 id='features-heading'>
+                        University Membership
+                    </h2>
+                </div>
+                <div class='grid-item column-1 subheader'>
+                    <h3>
+                        With CivilTalk You Can...
+                    </h3>
+                </div>
 
-        {{!-- <div class="grid-item column-2 subheader">Includes:</div> --}}
-
-        <div class="grid-item column-1">
-          <h5 class="feature-copy">
-            Integrate civility and EQ into your curriculum and culture.</div>
-          </h5>
-        <div class="grid-item column-2">
-          <img
-            src="{{asset
-                'assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png'
-            }}"
-            alt="Check Icon"
-          />
-        </div>
-        <div class="grid-item column-1">
-          <h5 class="feature-copy">
-            Better prepare your students for their life journey with strengthened civility and emotional intelligence skills.
-          </h5>
-          </div>
-        <div class="grid-item column-2">
-          <img
-            src="{{asset
-                'assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png'
-            }}"
-            alt="Check Icon"
-          />
-        </div>
-        <div class="grid-item column-1">
-          <h5 class="feature-copy">
-            Enhance your culture of civility with this applied collaborative online service.
-          </h5>
-          </div>
-        <div class="grid-item column-2">
-          <img
-            src="{{asset
-                'assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png'
-            }}"
-            alt="Check Icon"
-          />
-        </div>
-        <div class="grid-item column-1">
-          <h5 class="feature-copy">
-            Build your brand awareness with logo placement on each student, staff, and faculty profile page
-          </h5>  
-        </div>
-        <div class="grid-item column-2">
-          <img
-            src="{{asset
-                'assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png'
-            }}"
-            alt="Check Icon"
-          />
-        </div>
-        <div class="grid-item column-1">
-          <h5 class="feature-copy">
-            Deepen your relationship with employers hiring your students who have civility and EI skills through sponsorship opportunities.
-          </h5>
-          </div>
-        <div class="grid-item column-2">
-          <img
-            src="{{asset
-                'assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png'
-            }}"
-            alt="Check Icon"
-          />
-        </div>
-        <div class="grid-item column-1 header">
-          <h5>Learn how CivilTalk can help your University</h5>
-        </div>
-        <div class="grid-item column-1 header">
-          <a
-            href="mailto:support@civiltalk.com"
-            rel="noreferrer"
-            referrerpolicy="no-referrer"
-            target="_blank"
-          >
-            <button class="homepage-cta-button">Contact Us</button>
-          </a>
-        </div>
-
-
-    </div>
-
+                <div class='grid-item column-1'>
+                    <p class='feature-copy'>
+                        Integrate civility and EQ into your curriculum and
+                        culture.
+                    </p>
+                </div>
+                <div class='grid-item column-2'>
+                    <img
+                        src='{{asset
+                            "assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                        }}'
+                        alt='Check Icon'
+                    />
+                </div>
+                <div class='grid-item column-1'>
+                    <p class='feature-copy'>
+                        Better prepare your students for their life journey with
+                        strengthened civility and emotional intelligence skills.
+                    </p>
+                </div>
+                <div class='grid-item column-2'>
+                    <img
+                        src='{{asset
+                            "assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                        }}'
+                        alt='Check Icon'
+                    />
+                </div>
+                <div class='grid-item column-1'>
+                    <p class='feature-copy'>
+                        Enhance your culture of civility with this applied
+                        collaborative online service.
+                    </p>
+                </div>
+                <div class='grid-item column-2'>
+                    <img
+                        src='{{asset
+                            "assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                        }}'
+                        alt='Check Icon'
+                    />
+                </div>
+                <div class='grid-item column-1'>
+                    <p class='feature-copy'>
+                        Build your brand awareness with logo placement on each
+                        student, staff, and faculty profile page.
+                    </p>
+                </div>
+                <div class='grid-item column-2'>
+                    <img
+                        src='{{asset
+                            "assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                        }}'
+                        alt='Check Icon'
+                    />
+                </div>
+                <div class='grid-item column-1'>
+                    <p class='feature-copy'>
+                        Deepen your relationship with employers hiring your
+                        students who have civility and EI skills through
+                        sponsorship opportunities.
+                    </p>
+                </div>
+                <div class='grid-item column-2'>
+                    <img
+                        src='{{asset
+                            "assets/icons/task_alt_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                        }}'
+                        alt='Check Icon'
+                    />
+                </div>
+                <div class='grid-item column-1 header'>
+                    <h3>
+                        Learn how CivilTalk can help your University
+                    </h3>
+                </div>
+                <div class='grid-item column-1 header'>
+                    <a
+                        href='mailto:support@civiltalk.com'
+                        rel='noreferrer'
+                        referrerpolicy='no-referrer'
+                        target='_blank'
+                    >
+                        <button class='homepage-cta-button'>
+                            Contact Us
+                        </button>
+                    </a>
+                </div>
+            </div>
         </section>
     </article>
 {{/page}}

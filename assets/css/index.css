@@ -9,22 +9,22 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* ---------------------------------------------------------- */
 
 /* Base components */
-@import "vars.css";
-@import "components/global.css";
-@import "components/forms.css";
-@import "components/buttons.css";
-@import "components/podcast.css";
+@import 'vars.css';
+@import 'components/global.css';
+@import 'components/forms.css';
+@import 'components/buttons.css';
+@import 'components/podcast.css';
 
 /* Ghost components */
-@import "ghost/header.css";
-@import "ghost/content.css";
-@import "ghost/readmore.css";
-@import "ghost/members.css";
-@import "ghost/errors.css";
-@import "ghost/footer.css";
-@import "ghost/badge.css";
-@import "ghost/pagination.css";
-@import "ghost/comments.css";
+@import 'ghost/header.css';
+@import 'ghost/content.css';
+@import 'ghost/readmore.css';
+@import 'ghost/members.css';
+@import 'ghost/errors.css';
+@import 'ghost/footer.css';
+@import 'ghost/badge.css';
+@import 'ghost/pagination.css';
+@import 'ghost/comments.css';
 
 /* Custom Components */
 
@@ -682,7 +682,7 @@ html,
     font-size: clamp(3rem, 4vw + 1rem, 5rem);
     color: var(--color-white);
     text-align: center;
-    font-family: "sophia pro";
+    font-family: 'sophia pro';
 }
 
 .why-civiltalk-hero-subtitle {
@@ -692,7 +692,7 @@ html,
     text-align: center;
     line-height: normal;
     padding-bottom: 1.5rem;
-    font-family: "sophia pro";
+    font-family: 'sophia pro';
 }
 
 .why-civiltalk-hero-subtitle-disclaimer {
@@ -701,6 +701,7 @@ html,
     font-weight: 500;
     text-align: center;
     line-height: normal;
+    list-style: none;
 }
 
 .why-civiltalk-hero-subtitle-disclaimer:first-of-type {
@@ -1570,7 +1571,7 @@ html,
 
 .gh-author-links a + a:before {
     display: block;
-    content: "";
+    content: '';
     margin: 0 1.25vmin 0 0;
     height: 1em;
     width: 1px;
@@ -1582,4 +1583,15 @@ html,
     .gh-author-meta {
         font-size: 1.6rem;
     }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
