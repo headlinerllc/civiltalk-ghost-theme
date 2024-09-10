@@ -79,10 +79,10 @@
       {{/match}}
       <div class="homepage-cta-container">
         {{#if @custom.cta_header}}
-          <h2 class="university-cta-header">{{title}}</h2>
+          <h1 class="university-cta-header">{{title}}</h1>
         {{/if}}
         {{#if @custom.cta_sub_header}}
-          <h3 class="university-cta-sub-header">{{custom_excerpt}}</h3>
+          <h2 class="university-cta-sub-header">{{custom_excerpt}}</h2>
         {{/if}}
       </div>
     </div>
@@ -90,7 +90,7 @@
 </header>
 
 <section class="{{post_class}} features-container" role="region" aria-labelledby="features-heading">
-  <h2 id="features-heading" class="visually-hidden">University Features</h2>
+  <h3 id="features-heading" class="visually-hidden">University Features</h3>
   {{#get "posts" filter="primary_tag:university"}}
     {{#foreach posts}}
       {{> "feature" page=../pagination.page }} {{!-- partials/card.hbs --}}
