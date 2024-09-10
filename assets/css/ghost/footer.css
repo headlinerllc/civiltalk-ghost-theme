@@ -62,6 +62,10 @@
     }
 }
 
+.footer-customer-support-link {
+    list-style: none;
+}
+
 .footer-socials-list {
     display: flex;
     justify-content: center;
