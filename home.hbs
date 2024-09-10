@@ -81,10 +81,10 @@
             {{/match}}
             <div class="homepage-cta-container">
                 {{#if @custom.cta_header}}
-                    <h2 class="homepage-cta-header">{{@custom.cta_header}}</h2>
+                    <h1 class="homepage-cta-header">{{@custom.cta_header}}</h1>
                 {{/if}}
                 {{#if @custom.cta_sub_header}}
-                    <h3 class="homepage-cta-sub-header">{{@custom.cta_sub_header}}</h3>
+                    <h2 class="homepage-cta-sub-header">{{@custom.cta_sub_header}}</h2>
                 {{/if}}
                 <div class="homepage-cta-button-container">
                     <a
@@ -102,6 +102,7 @@
 </header>
 
 <section class="homepage-sections-container" role="region" aria-labelledby="posts-heading">
+     <h3 id="posts-heading" class="visually-hidden">About CivilTalk</h3>
     {{#foreach posts}}
         {{> "section" page=../pagination.page }} {{!-- partials/card.hbs --}}
     {{/foreach}}

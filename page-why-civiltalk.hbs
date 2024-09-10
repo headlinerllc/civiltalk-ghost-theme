@@ -11,7 +11,7 @@
             </div>
         </header>
         <section class="{{post_class}} features-container" role="region" aria-labelledby="features-heading">
-            <h2 id="features-heading" class="visually-hidden">Features</h2>
+            <h3 id="features-heading" class="visually-hidden">Features</h3>
             {{#get "posts" filter="primary_tag:features"}}
                 {{#foreach posts}}
                     {{> "feature" page=../pagination.page }} {{!-- partials/card.hbs --}}
