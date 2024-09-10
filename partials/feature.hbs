@@ -1,11 +1,11 @@
 {{!-- Re-usable card for linking to posts with primary tag of features --}}
 
-<article class="feature-grid-container {{post_class}}">
+<article class="feature-grid-container {{post_class}}" role="article">
   <header class="feature-header">
-    <h1 class="feature-title">{{title}}</h1>
+    <h3 class="feature-title">{{title}}</h3>
   </header>
   <main>
-    <figure class="feature-flex-container"> 
+    <figure class="feature-flex-container">
       <picture class="feature-card-picture">
         <source 
           srcset="
@@ -34,9 +34,9 @@
           class="feature-card-image"
           loading="lazy"
         >
-      </picture>        
+      </picture>
       <figcaption class="feature-grid-item-2">
-        <h3 class="feature-section-excerpt">{{excerpt}}</h3>
+        <p class="feature-section-excerpt">{{excerpt}}</p>
       </figcaption>
     </figure>
   </main>

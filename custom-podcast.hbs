@@ -2,17 +2,16 @@
 
 {{#post}}
 
-<article class="podcast-article {{post_class}}">
-    <header class="podcast-header">
+<article class="podcast-article {{post_class}}" role="article">
+    <header class="podcast-header" role="banner">
       <div class="podcast-header-wrapper">
-
-      
-      <div class="podcast-header-content">
-        <h1 class="podcast-title">{{title}}</h1>
-        <div>
-          <span class=""><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-
-        <ul class="podcast-page-hero-links">
+        <div class="podcast-header-content">
+            <h1 class="podcast-title">{{title}}</h1>
+                <div>
+                    <span>
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                    </span> 
+            <ul class="podcast-page-hero-links">
                 <li class="podcast-hero-link-container">
                     <a
                         class="podcast-hero-link"
@@ -126,7 +125,7 @@
                 </li>
             </ul> 
             </div>
-      </div>
+         </div>
 
         {{#if feature_image}}
             <picture class="podcast-hero-image">

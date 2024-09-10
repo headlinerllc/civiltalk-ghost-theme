@@ -1,23 +1,22 @@
 {{!< default}}
 
 {{#page}}
-    <article class="{{post_class}}>
-        <header class="why-civiltalk-hero">
+    <article class="{{post_class}}" role="article">
+        <header class="why-civiltalk-hero" role="banner">
             <div class="why-civiltalk-hero-content">
                 <h1 class="why-civiltalk-hero-title">{{title}}</h1>
                 <h2 class="why-civiltalk-hero-subtitle">
                     {{custom_excerpt}}
-                </div>
+                </h2>
             </div>
         </header>
-        <section class="{{post_class}} features-container">
-
+        <section class="{{post_class}} features-container" role="region" aria-labelledby="features-heading">
+            <h2 id="features-heading" class="visually-hidden">Features</h2>
             {{#get "posts" filter="primary_tag:features"}}
                 {{#foreach posts}}
                     {{> "feature" page=../pagination.page }} {{!-- partials/card.hbs --}}
                 {{/foreach}}
             {{/get}}
-
         </section>
     </article>
 {{/page}}
