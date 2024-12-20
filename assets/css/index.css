@@ -419,7 +419,7 @@ html,
 .article-section-small-excerpt {
     font-size: 1.5rem;
     font-size: calc(0.1em + 1.25vw);
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
     text-align: center;
     /* width: 80%; */
@@ -430,15 +430,29 @@ html,
     }
 }
 
+@media (max-width: 899px) {
+    .article-sub-header-gold {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+
+    .article-section-small-excerpt {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+}
+
 .article-list li {
     font-size: 1.5rem;
     font-size: calc(0.2em + 1.5vw);
     /* font-size: 1em; */
     font-weight: 700;
+    list-style: circle;
 }
 
 @media (max-width: 799px) {
     .article-list li {
+        padding: 1rem 1rem 0 1rem;
         font-size: 1.25rem;
     }
 }
@@ -633,7 +647,7 @@ html,
         line-height: normal;
         text-align: center;
         /* width: 80%; */
-        padding: 0 1.5rem;
+        padding: 0 1rem;
     }
 }
 
