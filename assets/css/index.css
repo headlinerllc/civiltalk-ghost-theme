@@ -1727,27 +1727,26 @@ html,
     background-image: url('../images/hero-image.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     min-block-size: 80vh;
     width: 100%;
-    /* height: 100vh;  */
 }
 
 @media (max-width: 1024px) {
     .hero-image {
-        background-image: url('{{asset "images/hero-image.png" size="l"}}');
-        min-block-size: 60vh;
+        min-block-size: 80vh;
+    }
+}
+
+@media (max-width: 999px) {
+    .hero-image {
+        min-block-size: 100vh;
+        background-image: none;
     }
 }
 
 @media (max-width: 600px) {
     .hero-image {
-        background-image: url('{{asset "images/hero-image.png" size="m"}}');
-    }
-}
-
-@media (max-width: 300px) {
-    .hero-image {
-        background-image: url('{{asset "images/hero-image.png" size="s"}}');
+        min-block-size: 90vh;
     }
 }
