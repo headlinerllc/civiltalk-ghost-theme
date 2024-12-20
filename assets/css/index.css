@@ -342,6 +342,7 @@ html,
     display: flex;
     /* margin-bottom: -5rem; */
     max-width: 90rem;
+    padding: 2rem 0;
 }
 
 /* .article-grid-container:nth-child(even) {
@@ -355,6 +356,12 @@ html,
     align-items: center;
     justify-content: center;
     padding: 2rem;
+}
+
+@media (max-width: 499px) {
+    .article-grid-item-1 {
+        padding: 1rem;
+    }
 }
 
 .article-card-image {
@@ -376,16 +383,38 @@ html,
     /* padding: 7em 1em 2em 1em; */
 }
 
+.article-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* @media (max-width: 499px) {
+    .article-card-content {
+        padding: 1rem 0;
+    }
+} */
+
 .article-header-gold {
     /* color: var(--ghost-accent-color); */
     border-bottom: 0.5rem solid var(--ghost-accent-color);
     text-transform: uppercase;
     text-align: center;
-    font-size: 2rem;
-    font-size: calc(0.1em + 2vw);
+    font-size: 3.75rem;
+    font-size: calc(0.1em + 3.75vw);
 }
 
-@media (max-width: 999px) {
+@media (max-width: 799px) {
+    .article-header-gold {
+        font-size: 3rem;
+        /* font-size: calc(0.1em + 3.75vw); */
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 699px) {
     .article-header-gold {
         font-size: 2rem;
         margin-bottom: 1rem;
@@ -397,8 +426,9 @@ html,
     border-bottom: 0.5rem solid var(--ghost-accent-color);
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.5rem;
-    font-size: calc(0.1em + 1.5vw);
+    font-size: 2rem;
+    /* font-size: calc(0.1em + 1.5vw); */
+    margin-bottom: 1.25rem;
 }
 
 .article-section-excerpt {
@@ -423,7 +453,7 @@ html,
     line-height: normal;
     text-align: center;
     /* width: 80%; */
-    padding: 0 2rem 2rem 2rem;
+    /* padding: 0 2rem 2rem 2rem; */
 
     b {
         font-weight: 700;
@@ -433,12 +463,12 @@ html,
 @media (max-width: 899px) {
     .article-sub-header-gold {
         font-size: 1.25rem;
-        margin-top: 1.25rem;
+        margin-bottom: 1rem;
     }
 
     .article-section-small-excerpt {
         font-size: 1.25rem;
-        padding: 1rem;
+        /* padding: 1rem; */
     }
 }
 
@@ -448,12 +478,13 @@ html,
     /* font-size: 1em; */
     font-weight: 700;
     list-style: circle;
+    padding: 1rem 1rem 0 1rem;
 }
 
 @media (max-width: 799px) {
     .article-list li {
-        padding: 1rem 1rem 0 1rem;
         font-size: 1.25rem;
+        padding: 0.5rem 0.5rem 0 0.5rem;
     }
 }
 
@@ -463,6 +494,12 @@ html,
     align-items: center;
     justify-content: center;
     padding: 4rem;
+}
+
+@media (max-width: 799px) {
+    .article-grid-full-width {
+        padding: 1rem;
+    }
 }
 
 /** Section Card Table Screen View */
