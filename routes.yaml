@@ -10,3 +10,8 @@ collections:
         template: custom-podcasts
         filter: primary_tag:podcast
         data: page.podcast
+
+data:
+    home_content:
+        type: page
+        filter: tag:home-page-content

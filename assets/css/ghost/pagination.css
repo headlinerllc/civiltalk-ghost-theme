@@ -1,6 +1,65 @@
-
-.gh-pagination .pagination {
+/* .gh-pagination .pagination {
     display: flex;
     justify-content: space-between;
     margin-block: 4vmin;
+    border: 1px solid red;
+} */
+
+/* .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 4vmin;
+} */
+
+.pagination-next {
+    text-align: right;
+}
+
+.pagination-previous {
+    text-align: left;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.pagination-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--ghost-accent-color);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover {
+    background-color: #f0c633;
+}
+
+.pagination-link.is-current {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+    }
+
+    .pagination-previous {
+        text-align: center;
+    }
+
+    .pagination-next {
+        text-align: center;
+    }
 }
