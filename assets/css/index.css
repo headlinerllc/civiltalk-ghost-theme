@@ -64,7 +64,7 @@ html,
     text-align: center;
     color: var(--color-darkgrey);
     width: 100%;
-    height: 78vh;
+    /* height: 78vh; */
     overflow: hidden;
 }
 
@@ -73,7 +73,7 @@ html,
     object-position: top;
     display: block;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     object-position: 0rem;
 }
 
@@ -82,7 +82,7 @@ html,
     object-position: top;
     display: block;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     /* object-position: 0rem; */
 }
 
@@ -154,15 +154,16 @@ html,
     width: 100%;
 }
 
-.site-header-content.left-aligned .site-header-inner {
+/* .site-header-content.left-aligned .site-header-inner {
     align-items: flex-start;
-}
+} */
 
 .site-logo {
     flex: 1;
     margin: 0 auto;
-    width: 40%;
-    width: clamp(20rem, 40% + 1vw, 40%);
+    width: 80%;
+    width: clamp(20rem, 50% + 1vw, 80%);
+    margin-top: 1rem;
 }
 
 /* CivilTalk Logo shrinks on smaller screen sizes */
@@ -263,28 +264,35 @@ html,
     align-items: center;
     justify-content: space-around;
     /* max-width: 1200px; */
-    padding: 4rem 0;
-    gap: 2rem;
+    padding: 1rem 0;
+    gap: 1rem;
 }
 
 .homepage-cta-header {
-    font-size: 3rem;
-    font-size: clamp(1.25rem, 1.5vw + 1rem, 3rem);
+    font-size: 2.25rem;
+    font-size: clamp(1.25rem, 1.5vw + 1rem, 2.25rem);
     font-weight: 700;
-    text-transform: uppercase;
     line-height: normal;
-    width: 95vw;
+    width: 75vw;
     text-align: center;
     color: var(--color-darkgrey);
+}
+
+.homepage-hr {
+    width: 50%;
+    height: 0.5rem;
+    background: var(--ghost-accent-color);
+    margin: 1rem 0;
+    border: 1px solid var(--ghost-accent-color);
+    opacity: 1;
 }
 
 .homepage-cta-sub-header {
     font-size: 1.65rem;
     font-size: clamp(1rem, 1.05vw + 1rem, 2rem);
     font-weight: 500;
-    max-width: 60%;
     line-height: normal;
-    width: 65vw;
+    width: 75vw;
     text-align: center;
 }
 
@@ -324,7 +332,7 @@ html,
 
 .homepage-sections-container {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto 6rem auto;
@@ -332,13 +340,13 @@ html,
 
 .article-grid-container {
     display: flex;
-    margin-bottom: -5rem;
+    /* margin-bottom: -5rem; */
     max-width: 90rem;
 }
 
-.article-grid-container:nth-child(odd) {
+/* .article-grid-container:nth-child(even) {
     flex-direction: row-reverse;
-}
+} */
 
 .article-grid-item-1 {
     flex: 1;
@@ -356,32 +364,126 @@ html,
     /* aspect-ratio: 1 / 1; */
     /* padding: 0 1em; */
     border-radius: 0.25rem;
-    box-shadow: var(--image-box-shadow);
 }
 
 .article-grid-item-2 {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 1rem;
     align-items: center;
     /* padding: 7em 1em 2em 1em; */
 }
 
+.article-header-gold {
+    /* color: var(--ghost-accent-color); */
+    border-bottom: 0.5rem solid var(--ghost-accent-color);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    font-size: calc(0.1em + 2vw);
+}
+
+@media (max-width: 999px) {
+    .article-header-gold {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.article-sub-header-gold {
+    /* color: var(--ghost-accent-color); */
+    border-bottom: 0.5rem solid var(--ghost-accent-color);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
+    font-size: calc(0.1em + 1.5vw);
+}
+
 .article-section-excerpt {
     font-size: 1.5rem;
-    font-size: calc(0.1em + 2vw);
+    font-size: calc(0.1em + 1.75vw);
     /* font-size: 1em; */
     font-weight: 500;
     line-height: normal;
     text-align: center;
     /* width: 80%; */
     padding: 1rem 2rem;
+
+    b {
+        font-weight: 700;
+    }
 }
+
+.article-section-small-excerpt {
+    font-size: 1.5rem;
+    font-size: calc(0.1em + 1.25vw);
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    /* width: 80%; */
+    padding: 0 2rem 2rem 2rem;
+
+    b {
+        font-weight: 700;
+    }
+}
+
+.article-list li {
+    font-size: 1.5rem;
+    font-size: calc(0.2em + 1.5vw);
+    /* font-size: 1em; */
+    font-weight: 700;
+}
+
+@media (max-width: 799px) {
+    .article-list li {
+        font-size: 1.25rem;
+    }
+}
+
+.article-grid-full-width {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+/** Section Card Table Screen View */
+
+/* @media (max-width: 999px) {
+    .article-grid-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .article-grid-container:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .article-grid-item-2 {
+        padding: 2rem 1rem;
+    }
+
+    .article-header-gold {
+        margin-bottom: 1rem;
+    }
+
+    .article-section-excerpt {
+        font-size: 1.35rem;
+        font-weight: 500;
+        line-height: normal;
+        text-align: center;
+        padding: 0 1.5rem;
+    }
+} */
 
 /** Section Card Mobile Screen View */
 
-@media (max-width: 699px) {
+@media (max-width: 799px) {
     .article-grid-container {
         display: flex;
         flex-direction: column;
@@ -1594,4 +1696,58 @@ html,
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+.kg-header-card-heading {
+    color: red;
+}
+
+.bold-copy {
+    font-weight: 700;
+}
+
+.horizontal-padding {
+    padding: 0 2rem;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 799px) {
+    .flex-row-reverse {
+        flex-direction: column;
+    }
+}
+
+/* ********************************************** */
+/* Home Page Hero Image */
+/* ********************************************** */
+.hero-image {
+    background-image: url('../images/hero-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-block-size: 80vh;
+    width: 100%;
+    /* height: 100vh;  */
+}
+
+@media (max-width: 1024px) {
+    .hero-image {
+        background-image: url('{{asset "images/hero-image.png" size="l"}}');
+        min-block-size: 60vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-image {
+        background-image: url('{{asset "images/hero-image.png" size="m"}}');
+    }
+}
+
+@media (max-width: 300px) {
+    .hero-image {
+        background-image: url('{{asset "images/hero-image.png" size="s"}}');
+    }
 }

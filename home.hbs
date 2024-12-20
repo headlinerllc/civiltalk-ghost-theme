@@ -1,49 +1,17 @@
 {{!< default}}
 
 <header class="site-header-content outer {{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}" role="banner">
-    {{#if @custom.show_publication_cover}}
-        {{#if @site.cover_image}}
-            {{!-- This is a responsive image, it loads different sizes depending on device
-            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-            <picture>
-                <!-- Serve the AVIF format if the browser supports it -->
-                <!-- Remove this block when using animated images as feature images -->
-                <source 
-                    srcset="{{img_url @site.cover_image size="s" format="avif"}} 300w,
-                        {{img_url @site.cover_image size="m" format="avif"}} 600w,
-                        {{img_url @site.cover_image size="l" format="avif"}} 2000w,
-                        {{img_url @site.cover_image size="xl" format="avif"}} 3000w"
-                    sizes="(min-width: 1023px) 3000px, 2000px" 
-                    type="image/avif"
-                >
-                <!-- Serve the WebP format if the browser supports it -->
-                <source 
-                    srcset="{{img_url @site.cover_image size="s" format="webp"}} 300w,
-                        {{img_url @site.cover_image size="m" format="webp"}} 600w,
-                        {{img_url @site.cover_image size="l" format="webp"}} 2000w,
-                        {{img_url @site.cover_image size="xl" format="webp"}} 3000w"
-                    sizes="(min-width: 1023px) 3000px, 2000px" 
-                    type="image/webp"
-                >
-                <!-- Serve original file format as a fallback -->
-                <img
-                    srcset="{{img_url @site.cover_image size="s"}} 300w,
-                        {{img_url @site.cover_image size="m"}} 600w,
-                        {{img_url @site.cover_image size="l"}} 2000w,
-                        {{img_url @site.cover_image size="xl"}} 3000w"
-                    sizes="(min-width: 1023px) 3000px, 2000px"
-                    src="{{img_url @site.cover_image size="xl"}}"
-                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                >
-            </picture>
-        {{/if}}
-    {{/if}}
+
+         <div class="hero-image" role="img" aria-label="hero-image"></div>
+
+           
+
 
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
             {{#match @custom.navigation_layout "Logo on cover"}}
                 {{#if @site.logo}}
-                    <picture>
+                    <picture class="site-logo">
                         <!-- Serve the AVIF format if the browser supports it -->
                         <!-- Remove this block when using animated images as feature images -->
                         <source 
@@ -65,7 +33,6 @@
                         >
                         <!-- Serve original file format as a fallback -->
                         <img
-                            class="site-logo"
                             srcset="{{img_url @site.logo size="s"}} 300w,
                                 {{img_url @site.logo size="m"}} 600w,
                                 {{img_url @site.logo size="l"}} 1000w,
@@ -83,30 +50,304 @@
                 {{#if @custom.cta_header}}
                     <h1 class="homepage-cta-header">{{@custom.cta_header}}</h1>
                 {{/if}}
+                <hr class="homepage-hr"/>
                 {{#if @custom.cta_sub_header}}
                     <h2 class="homepage-cta-sub-header">{{@custom.cta_sub_header}}</h2>
                 {{/if}}
-                <div class="homepage-cta-button-container">
-                    <a
-                        href="https://app.civiltalk.com"
-                        rel="noreferrer"
-                        referrerpolicy="no-referrer"
-                        target="_blank"
-                    >
-                        <button class="homepage-cta-button">Join Today</button>
-                    </a>
-                </div>
+               
             </div>
         </div>
     {{/match}}
 </header>
 
-<section class="homepage-sections-container" role="region" aria-labelledby="posts-heading">
-     <h3 id="posts-heading" class="visually-hidden">About CivilTalk</h3>
-    {{#foreach posts}}
-        {{> "section" page=../pagination.page }} {{!-- partials/card.hbs --}}
-    {{/foreach}}
+<section class="homepage-sections-container">
+
+<article class="article-grid-container" role="article">
+        <div class="article-grid-item-1">
+            <picture class="article-card-image">
+                <source 
+                    srcset="
+                    {{asset "images/image-1-3000-x-1500px.png" size="xxs" format="webp"}} 30w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="xs" format="webp"}} 100w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="s" format="webp"}} 300w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="m" format="webp"}} 600w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="l" format="webp"}} 1200w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    type="image/webp"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+                <img
+                    srcset="
+                    {{asset "images/image-1-3000-x-1500px.png" size="xxs"}} 30w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="xs"}} 100w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="s"}} 300w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="m"}} 600w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="l"}} 1200w,
+                    {{asset "images/image-1-3000-x-1500px.png" size="xl"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+            </picture>
+        </div>
+    <div class="article-grid-item-2">
+        <h3 class="article-header-gold">Vision</h3>
+        <h4 class="article-section-excerpt bold-copy">
+            To inspire a culture where emotional intelligence and civility drive innovation, entrepreneurship,and meaningful connections.<br/><br/>
+            To inspire a culture where emotional intelligence and civility drive innovation, entrepreneurship,and meaningful connections.
+        </h4>
+    </div>
+</article>
+
+<hr class="homepage-hr"/>
+
+<article class="article-grid-container flex-row-reverse" role="article">
+        <div class="article-grid-item-1">
+            <picture class="article-card-image">
+                <source 
+                    srcset="
+                    {{asset "images/image-2-3000-x-1500px.png" size="xxs" format="webp"}} 30w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="xs" format="webp"}} 100w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="s" format="webp"}} 300w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="m" format="webp"}} 600w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="l" format="webp"}} 1200w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    type="image/webp"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+                <img
+                    srcset="
+                    {{asset "images/image-2-3000-x-1500px.png" size="xxs"}} 30w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="xs"}} 100w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="s"}} 300w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="m"}} 600w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="l"}} 1200w,
+                    {{asset "images/image-2-3000-x-1500px.png" size="xl"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+            </picture>
+        </div>
+    <div class="article-grid-item-2">
+        <h4 class="article-section-excerpt">
+            At CivilTalk, we provide a dedicated space for students, staff, and faculty to utilize AI while building emotional intelligence and practicing civility.<br/><br/>
+            Our <b>service</b> and <b>podcast</b> are specifically made to foster an environment where respectful dialogue and a positive culture can thrive, empowering individuals to navigate technology and their every day life with empathy and integrity.
+        </h4>
+    </div>
+</article>
+    
+<hr class="homepage-hr"/>
+
+<article class="article-grid-container flex-row-reverse" role="article">
+        <div class="article-grid-item-1">
+            <picture class="article-card-image">
+                <source 
+                    srcset="
+                    {{asset "images/image-3.png" size="xxs" format="webp"}} 30w,
+                    {{asset "images/image-3.png" size="xs" format="webp"}} 100w,
+                    {{asset "images/image-3.png" size="s" format="webp"}} 300w,
+                    {{asset "images/image-3.png" size="m" format="webp"}} 600w,
+                    {{asset "images/image-3.png" size="l" format="webp"}} 1200w,
+                    {{asset "images/image-3.png" size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    type="image/webp"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+                <img
+                    srcset="
+                    {{asset "images/image-3.png" size="xxs"}} 30w,
+                    {{asset "images/image-3.png" size="xs"}} 100w,
+                    {{asset "images/image-3.png" size="s"}} 300w,
+                    {{asset "images/image-3.png" size="m"}} 600w,
+                    {{asset "images/image-3.png" size="l"}} 1200w,
+                    {{asset "images/image-3.png" size="xl"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+            </picture>
+        </div>
+    <div class="article-grid-item-2">
+        <h4 class="article-section-excerpt horizontal-padding">
+            <b>"Responsible AI begins with emotional intelligence—understanding ourselves and others allows us to harness technology for positive change, ensuring it serves humanity with respect, empathy, and ethical foresight."</b><br/><br/>
+            -Keith Fox, CivilTalk co-founder
+        </h4>
+    </div>
+</article>
+
+<hr class="homepage-hr"/>
+
+<article class="article-grid-container" role="article">
+        <div class="article-grid-item-1">
+            <picture class="article-card-image">
+                <source 
+                    srcset="
+                    {{asset "images/image-2.png" size="xxs" format="webp"}} 30w,
+                    {{asset "images/image-2.png" size="xs" format="webp"}} 100w,
+                    {{asset "images/image-2.png" size="s" format="webp"}} 300w,
+                    {{asset "images/image-2.png" size="m" format="webp"}} 600w,
+                    {{asset "images/image-2.png" size="l" format="webp"}} 1200w,
+                    {{asset "images/image-2.png" size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    type="image/webp"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+                <img
+                    srcset="
+                    {{asset "images/image-2.png" size="xxs"}} 30w,
+                    {{asset "images/image-2.png" size="xs"}} 100w,
+                    {{asset "images/image-2.png" size="s"}} 300w,
+                    {{asset "images/image-2.png" size="m"}} 600w,
+                    {{asset "images/image-2.png" size="l"}} 1200w,
+                    {{asset "images/image-2.png" size="xl"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+            </picture>
+        </div>
+    <div class="article-grid-item-2">
+        <h3 class="article-header-gold">CivilTalk & Ethical AI</h3>
+        <h4 class="article-section-excerpt">
+            AI is here to stay, and it's essential for students to learn how to navigate and use these tools responsibly.<br/><br/>
+            At CivilTalk, we strive to equip students with the skills to engage with AI ethically by:
+        </h4>
+        <ul class="article-list bold-copy">
+            <li>-Promoting Academic Integrity</li>
+            <li>-Fostering Critical Thinking</li>
+            <li>-Encouraging Transparency</li>
+        </ul>
+    </div>
+</article>
+
+
+<article class="article-grid-container flex-row-reverse" role="article">
+        <div class="article-grid-item-1">
+            <picture class="article-card-image">
+                <source 
+                    srcset="
+                    {{asset "images/prompts.png" size="xxs" format="webp"}} 30w,
+                    {{asset "images/prompts.png" size="xs" format="webp"}} 100w,
+                    {{asset "images/prompts.png" size="s" format="webp"}} 300w,
+                    {{asset "images/prompts.png" size="m" format="webp"}} 600w,
+                    {{asset "images/prompts.png" size="l" format="webp"}} 1200w,
+                    {{asset "images/prompts.png" size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    type="image/webp"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+                <img
+                    srcset="
+                    {{asset "images/prompts.png" size="xxs"}} 30w,
+                    {{asset "images/prompts.png" size="xs"}} 100w,
+                    {{asset "images/prompts.png" size="s"}} 300w,
+                    {{asset "images/prompts.png" size="m"}} 600w,
+                    {{asset "images/prompts.png" size="l"}} 1200w,
+                    {{asset "images/prompts.png" size="xl"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+            </picture>
+        </div>
+    <div class="article-grid-item-2">
+        <h3 class="article-sub-header-gold">Promoting Academic Integrity:</h3>
+        <h4 class="article-section-small-excerpt">
+            Teaching students to use AI tools in a way that prevents plagiarism and encourages original thought and proper citation practices.
+        </h4>
+        
+        <h3 class="article-sub-header-gold">Fostering Critical Thinking:</h3>
+        <h4 class="article-section-small-excerpt">
+            Teaching students to use AI tools in a way that prevents plagiarism and encourages original thought and proper citation practices.
+        </h4>
+        
+        <h3 class="article-sub-header-gold">Encouraging Transparency:</h3>
+        <h4 class="article-section-small-excerpt">
+            Teaching students to use AI tools in a way that prevents plagiarism and encourages original thought and proper citation practices.
+        </h4>
+       
+    </div>
+</article>
+
+<article class="article-grid-full-width" role="article">
+    <h3 class="article-header-gold">CIVILTALK & Career Readiness</h3>
+    <h4 class="article-section-excerpt">
+        We are committed to empowering students with the skills they need to succeed in their careers, internships, and balancing the demands of work and study life.
+    </h4>
+</article>
+
+<article class="article-grid-container flex-row-reverse" role="article">
+        <div class="article-grid-item-1">
+            <picture class="article-card-image">
+                <source 
+                    srcset="
+                    {{asset "images/resume.png" size="xxs" format="webp"}} 30w,
+                    {{asset "images/resume.png" size="xs" format="webp"}} 100w,
+                    {{asset "images/resume.png" size="s" format="webp"}} 300w,
+                    {{asset "images/resume.png" size="m" format="webp"}} 600w,
+                    {{asset "images/resume.png" size="l" format="webp"}} 1200w,
+                    {{asset "images/resume.png" size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    type="image/webp"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+                <img
+                    srcset="
+                    {{asset "images/resume.png" size="xxs"}} 30w,
+                    {{asset "images/resume.png" size="xs"}} 100w,
+                    {{asset "images/resume.png" size="s"}} 300w,
+                    {{asset "images/resume.png" size="m"}} 600w,
+                    {{asset "images/resume.png" size="l"}} 1200w,
+                    {{asset "images/resume.png" size="xl"}} 2000w"
+                    sizes="(min-width: 800px) 100vw, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    {{!-- class="article-card-image" --}}
+                    {{^if @first}}loading="lazy"{{/if}}
+                >
+            </picture>
+        </div>
+    <div class="article-grid-item-2">
+        <h3 class="article-sub-header-gold">Career Readiness</h3>
+        <h4 class="article-section-small-excerpt">
+            Help students develop critical skills like communication, emotional intelligence, and teamwork, ensuring they stand out in a competitive job market.
+        </h4>
+        </h4>
+        
+        <h3 class="article-sub-header-gold">Internship Readiness</h3>
+        <h4 class="article-section-small-excerpt">
+            Prepare students for internships by fostering practical problem-solving abilities and professionalism, making them confident and capable candidates early on.
+         </h4>
+        
+        <h3 class="article-sub-header-gold">Help Students With Work/Study Life</h3>
+        <h4 class="article-section-small-excerpt">
+            Support students in balancing academic and professional responsibilities, offering tools to manage stress, improve productivity, and thrive in both areas.
+        </h4>
+       
+    </div>
+</article>
+
 </section>
+
 
 
 
