@@ -1,6 +1,6 @@
 <nav class='pagination' role='navigation' aria-label='pagination'>
-    {{#if prev}}
-        <a href='{{page url prev}}' class='pagination-button pagination-next'>
+    {{#if pagination.prev}}
+        <a href='{{page_url prev}}' class='pagination-button pagination-next'>
             Newer Episodes
         </a>
     {{/if}}
@@ -11,7 +11,7 @@
 
     {{#if next}}
         <a
-            href='{{page url next}}'
+            href='{{page_url next}}'
             class='pagination-button pagination-previous'
         >
             Older Episodes
