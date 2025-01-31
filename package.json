@@ -106,6 +106,12 @@
             },
             "podcast_hero_image": {
                 "type": "image"
+            },
+            "ct_banner_heading_1": {
+                "type": "text"
+            },
+            "ct_banner_heading_2": {
+                "type": "text"
             }
         }
     },

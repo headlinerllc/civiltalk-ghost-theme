@@ -1801,3 +1801,21 @@ html,
         min-block-size: 90vh;
     }
 }
+
+.ct-banner {
+    /* height: 8rem; */
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    line-height: 1.5rem;
+}
+
+.ct-banner-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.85rem;
+}
